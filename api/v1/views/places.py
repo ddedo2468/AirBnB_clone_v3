@@ -68,7 +68,7 @@ def update_place(place_id):
     for key, value in new_place.items():
         if key not in ignored_keys:
             setattr(cur_place, key, value)
-    storage.save()
+    new_place.save()
     return make_response(jsonify(cur_place.to_dict()), 200)
 
 
