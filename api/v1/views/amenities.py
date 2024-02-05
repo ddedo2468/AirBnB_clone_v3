@@ -33,9 +33,9 @@ def create_amenity():
     """create a new amenity"""
     amenity = request.get_json()
     if not amenity:
-        return make_response(jsonify({'error': 'Not a JSON'}), 400)
+        return make_response("Not a JSON", 400)
     if 'name' not in amenity:
-        return make_response(jsonify({'error': 'Missing name'}), 400)
+        return make_response("Missing name", 400)
     new_amenity = Amenity(**amenity)
     new_amenity.save()
     return make_response(jsonify(new_amenity.to_dict()), 201)
@@ -50,7 +50,7 @@ def put_amenity(amenity_id):
     if not amenity:
         abort(404)
     if not data:
-        return make_response(jsonify({'error': 'not a JSON'}), 400)
+        return make_response("not a JSON", 400)
     for key, value in data.items():
         if key not in ignored_list:
             setattr(amenity, key, value)
