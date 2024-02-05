@@ -50,7 +50,7 @@ def put_amenity(amenity_id):
     if not amenity:
         abort(404)
     if not data:
-        return make_response("not a JSON", 400)
+        return make_response("Not a JSON", 400)
     for key, value in data.items():
         if key not in ignored_list:
             setattr(amenity, key, value)
