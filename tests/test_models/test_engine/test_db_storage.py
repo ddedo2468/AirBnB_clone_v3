@@ -156,7 +156,7 @@ class TestDBStorageGetMethod(unittest.TestCase):
 
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_get_with_amenity_valid_id(self):
-        """test get with amenity with valid id"""
+        """test get with amenity with  id"""
         amenity = Amenity(name="Anything")
         amenity.save()
         amenity_from_get = storage.get(Amenity, amenity.id)
