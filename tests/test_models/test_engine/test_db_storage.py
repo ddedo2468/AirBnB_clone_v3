@@ -164,7 +164,7 @@ class TestDBStorageGetMethod(unittest.TestCase):
 
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_get_with_city_valid_id(self):
-        """test get with city with valid id"""
+        """test get with city with id"""
         state = State(name="Anything")
         state.save()
         city = City(name="city_name", state_id=state.id)
