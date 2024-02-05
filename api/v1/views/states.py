@@ -60,7 +60,7 @@ def put_state(state_id):
 
     if not state:
         abort(404)
-    if not request.get_json:
+    if not request_data:
         return make_response("Not a JSON", 400)
     for key, value in request_data.items():
         if key not in ignored_list:
