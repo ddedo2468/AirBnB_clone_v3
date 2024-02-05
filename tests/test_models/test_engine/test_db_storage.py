@@ -151,7 +151,7 @@ class TestDBStorageGetMethod(unittest.TestCase):
 
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_get_with_user_wrong_id(self):
-        """test get with user with wrong id"""
+        """test get with user with wrong class_id"""
         self.assertEqual(storage.get(User, '12345'), None)
 
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
