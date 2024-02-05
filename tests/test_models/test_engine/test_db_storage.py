@@ -174,7 +174,7 @@ class TestDBStorageGetMethod(unittest.TestCase):
 
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_count_without_cls(self):
-        """Test count without cls"""
+        """Test count method without class"""
         amenity = Amenity(name="amenity_name")
         amenity.save()
         state = State(name="state_name")
