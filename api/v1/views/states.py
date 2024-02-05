@@ -2,9 +2,9 @@
 """handles all default RESTFul API actions for state module"""
 
 from api.v1.views import app_views
-from models.state import State
+from flask import abort, jsonify, make_response, request
 from models import storage
-from flask import jsonify, make_response, abort, request
+from models.state import State
 
 
 @app_views.route('/states', methods=['GET'])
