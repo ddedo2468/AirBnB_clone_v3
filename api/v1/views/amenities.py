@@ -17,6 +17,15 @@ def get_amenities():
     return make_response(jsonify(amenities_list))
 
 
+@app_views.route('/amenities/<string:amenity_id>', methods=['GET'])
+def get_amenity_id(amenity_id):
+    """get the amenity by it's id"""
+    amenity = storage.get(Amenity, amenity_id)
+    if amenity:
+        return make_response(jsonify(amenity.to_dict()), 200)
+    abort(404)
+
+
 @app_views.route('/amenities/<string:amenity_id>', methods=['DELETE'])
 def delete_amenity(amenity_id):
     """delete amenity"""
